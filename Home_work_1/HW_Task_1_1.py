@@ -6,10 +6,20 @@ import os
 def clear(): return os.system('cls')
 
 clear()
-User_number = int(input("Enter a three-digit number: "))
+# User_number = int(input("Enter a three-digit number: "))
+# Resultvalue = 0
+# if User_number<1000 and User_number>0:
+#     Resultvalue = (User_number//100) + ((User_number%100)//10)+ (User_number%10)
+#     print(f'sum of three digits of "{User_number}" = {Resultvalue}')
+# else:
+#     print("ERROR! Enter a three-digit number!")
+
+# Вариант 2 (Для любого количества цифр)
+
+User_number = int(input("Введите число: "))
 Resultvalue = 0
-if User_number<1000 and User_number>0:
-    Resultvalue = (User_number//100) + ((User_number%100)//10)+ (User_number%10)
-    print(f'sum of three digits of "{User_number}" = {Resultvalue}')
-else:
-    print("ERROR! Enter a three-digit number!")
+while User_number > 0:
+    ostatok = User_number % 10
+    Resultvalue += ostatok
+    User_number//=10
+print(f'Сумма цифр данного числа = {Resultvalue}')
